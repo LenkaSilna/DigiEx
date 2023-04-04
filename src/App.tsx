@@ -4,7 +4,8 @@ import DisplayText from "./components/DisplayText";
 import TextInteraction from "./components/TextInteraction";
 import logo from "./assets/logo.svg";
 import { Box, Flex, Spacer, ButtonGroup } from '@chakra-ui/react';
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Grid, GridItem } from '@chakra-ui/react';
+import SwitchTheme from "./components/SwitchTheme";
 
 const App: React.FC = () => {
   const [fileContents, setFileContents] = useState<string>("");
@@ -20,6 +21,10 @@ const App: React.FC = () => {
         <img src={logo} alt="logo" width={"50px"} height={"50px"} />
         </Box>
       <Spacer />
+      <Box p='2'>
+        <SwitchTheme />
+        </Box>
+        <Spacer />
         <Box>
           <TextFileUploader onFileUpload={handleFileUpload} />
         </Box>

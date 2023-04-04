@@ -13,6 +13,7 @@ interface Props {
 const TextInteraction: React.FC<Props> = ({ onTextChange }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<string[]>([]);
+  const space = " ";
 
   const handleMessageChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setMessage(event.target.value);
@@ -44,7 +45,7 @@ const TextInteraction: React.FC<Props> = ({ onTextChange }) => {
     <Flex direction="column">
     <Textarea 
     value={messages
-        .map((message) => `📩 ${message}\n`)
+        .map((message) => `📩 ${space}${message}\n`)
         .join("")}
         readOnly
         placeholder='Here is a sample placeholder'
